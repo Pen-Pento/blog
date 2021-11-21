@@ -4,8 +4,8 @@ name: github pages
 on:
   pull_request:
     branches:
-    - main
-  types: [closed]
+      - main
+    types: [closed]
 
 jobs:
   build-and-deploy:
