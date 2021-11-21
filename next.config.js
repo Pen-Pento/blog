@@ -1,4 +1,5 @@
 module.exports = {
-  assetPrefix: process.env.NODE_ENV === "production" ? "/blog" : "",
+  basePath: process.env.GITHUB_ACTIONS ? "/blog" : "",
+  assetPrefix: process.env.GITHUB_ACTIONS ? "/blog" : "",
   trailingSlash: true
 }
