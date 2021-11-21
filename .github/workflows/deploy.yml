@@ -1,0 +1,38 @@
+name: github pages
+
+# mainブランチにマージした際実行
+on:
+  pull_request:
+    branches:
+    - main
+  types: [closed]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    # mainブランチにマージされた時と限定したい
+    if: github.event.pull_request.merged == true
+    steps:
+      - name: checkout branch
+        uses: actions/checkout@v2
+
+      - name: setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+
+      # 将来的には./npmのキャッシュを残す
+      - name: npm install
+        run: npm ci
+
+      - name: build
+        run: npm run build
+
+      - name: export
+        run: npm run export
+
+      - name: deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
