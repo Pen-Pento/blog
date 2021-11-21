@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "dev": "next",
-    "build": "next build",
+    "build": "next build env NODE_ENV='production'",
     "start": "next start",
     "export": "next export",
     "typecheck": "tsc"
