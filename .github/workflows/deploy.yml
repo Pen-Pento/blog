@@ -31,6 +31,12 @@ jobs:
       - name: export
         run: npm run export
 
+      - name: check dir
+        run: ls -la
+
+      - name: check publish_dir
+        run: ls -la out
+
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
