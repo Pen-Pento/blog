@@ -5,7 +5,7 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "serve": "next export && serve ./out",
+    "serve": "next build && next export && serve ./out",
     "typecheck": "tsc"
   },
   "dependencies": {
