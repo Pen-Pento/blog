@@ -41,7 +41,7 @@ Markdown記法では`>`を入力するとその後の文は引用として記載
 ```
 
 確かに`.markdown blockquote {...}`に装飾系のCSSがない！
-そこで下記のように修正。
+そこで下記のように修正。デザインはGitHubに寄せたつもり。
 ```
 .markdown blockquote {
   @apply py-0 px-4 text-gray-600 border-l-4 border-solid border-gray-300 mt-0 mb-4;
